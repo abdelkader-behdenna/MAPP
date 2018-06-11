@@ -1,0 +1,30 @@
+Upload Files
+You can upload up to two .csv files using the two corresponding buttons. Depending on your file(s), you must select the right options (header, separator, quote). You can check the files on the right panel once they are uploaded.
+If you upload only one file, then it will also be considered as file 2.
+Note: Your files must be in the csv format, the first 5 columns being (in order): Id, Latitude, Longitude, Year, and Status (0 or 1, corresponding to negative and positive).
+
+Explore Files
+Use this tab to explore and search in your files. File 2 is the same as file 1 if only one file has been uploaded.
+
+
+General comment - number of bins: in the majority of the tabs constituting MApp, you can choose a “number of bins”. This number is used to separate the map into a certain number of squares (depending on the number of bins) for different statistics you might wish to apply locally on the map.
+
+Interactive Map
+	Datasets
+		Two datasets, defined in the left panel, can be displayed on the map. Each dataset consists of a file and a status. The default datasets are [file1 - 1 / file2 - 1] if two files have been uploaded, and [file1 - 1 / file1 - 0] if only one file has been uploaded. You can also choose the minimum/maximum year for the displayed data.
+	Map
+		The map is automatically generated, mapping both datasets. Each point correspond to an individual sample, its color and size indicating the year. The red points correspond to the Dataset 1 and the blue points to the Dataset 2.
+	Distributions
+		The first tab on the right panel corresponds to the temporal distributions of the datasets 1 and 2. The distribution depends only on the points that are displayed on the map following the changes of zoom or centering of the map. The two boxes show/hide the minimum and maximum year in each square defined by the number of bins.
+	Correlation
+		The second tab corresponds to the temporal correlation between the two datasets. The graph represents the temporal distribution of each Dataset. A Pearson’s correlation coefficient is calculated between those two distributions and returned. You can also calculate the temporal correlation for each square defined by the number of bins by ticking the box.
+	Prevalence
+		The third tab corresponds to the prevalence. The graph represents the evolution of the prevalence - Data1/(Data1+Data2) - over years. Here, the prevalence is defined as the proportion of points from Data1 among all the points represented on the map. The overall prevalence is also return. You can calculate the prevalence for each square defined by the number of bins by ticking the box.
+
+Temporal Heatmaps
+	The temporal heatmaps sum up the spatial and temporal correlation between the two datasets. They give an insight about the variation of spatial repartition of both datasets over years. There are two of them: the first one represents latitude correlation and the second one, the longitude correlation. To build them, the map is once again separated into a certain number of squares. For each year, two projected vectors are then defined: one for the latitudes and one for the longitudes. The heatmaps correspond to the Pearson’s correlation coefficients for all the pair of years, respectively for the latitudes and the longitudes vectors.
+
+Multi Sampling
+	In some cases, the datasets contain repeated identifiers (e.g. individuals sampled multiple times over years). In that case, the multi-sampling tab sums up the information about those individual in two graphs.
+	The first graph is a graphical representation of the history of each of those multi-sampled individual: each ligne corresponds to one individual, each red point to a positive sample, each blue point to a negative sample.
+	The second graph sums up the information contained in the first one. Each point is a transition from negative to positive (top left part of the graph) or positive to negative (bottom right part) for one individual. The X and Y-axes correspond to the years. An arrow links two point from the same individual.
